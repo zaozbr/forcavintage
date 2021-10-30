@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+
+<body>
+    <header id="title">
+        <h1>Jogo da Forca</h1>
+    </header>
+    <main>
+        <section id="score">
+            <section>
+                <h3>Score</h3>
+                <p id="actualScore"></p>
+            </section>
+            <section>
+                <pre>
+_________
+ |
+ |
+ |
+ |
+ |
+/ \
+            </pre>
+                <span id="corpinho">
+                    <pre id="morto">
+                <span id="dead4"> | </span>
+                <span id="dead3"> O </span>
+                <span id="dead2">/|\</span>
+                <span id="dead1"> | </span>
+                <span id="dead0">/ \</span>
+                </pre>
+                </span>
+            </section>
+        </section>
+        <div>
+            <section id="controls">
+                <div id="preGame">
+                    <label for="level">Nível de dificuldade</label><br />
+                    <form name="level">
+                        <span>
+                            <label for="facil">Fácil</label>
+                            <input type="radio" id="facil" name="levelRadios" value="facil" checked="checked" />
+                        </span>
+                        <span>
+                            <label for="dificil">Dificil</label>
+                            <input type="radio" id="dificil" name="levelRadios" value="dificil" />
+                        </span>
+                        <span>
+                            <label for="insano">Insano</label>
+                            <input type="radio" id="insano" name="levelRadios" value="insano" />
+                        </span>
+                    </form>
+                    <span onclick="startGame()">
+                        <button>
+                            <span id="blink">Clique aqui para começar!</span>
+                        </button>
+                    </span>
+                </div>
+                <div id="inGame">
+                    <h2>Digite uma letra</h2>
+                    <input id="gameInput" pattern="[A-Za-z]{1}" title="digite sua próxima letra" type="text"
+                        name="gameInput" onkeyup="validateInput()" />
+                    <button id="testLetter" onclick="testLetter()">Enviar letra</button>
+                </div>
+            </section>
+        </div>
+        <section id="board"></section>
+        <section id="usedList"></section>
+        <section id="hint"></section>
+        <section id="gameOver">
+            <div id="loose">
+                <img src="imagens/674342_man_512x512.png" />
+                <h3>Game Over</h3>
+            </div>
+            <div id="win">
+                <img src="imagens/win.png" />
+                <h3>Você Venceu!!!</h3>
+                <span id="pointsWin"></span>
+            </div>
+            <section class="buttons">
+                <button onclick="startGame()">Jogar Novamente?</button>
+                <button onclick="window.location.reload(false); ">Trocar dificuldade</button>
+            </section>
+        </section>
+    </main>
+</body>
+<script src="index.js"></script>
+
+
+</html>

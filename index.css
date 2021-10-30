@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Press+Start+2P&family=Roboto+Slab&display=swap');
+html {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(254, 255, 199);
+    background: linear-gradient(180deg, rgba(254, 255, 199, 0.10407913165266103) 0%, rgba(254, 255, 199, 0.09287464985994398) 85%, rgba(0, 0, 0, 1) 88%);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    /* min-width: 1200px; */
+    /* margin: 0 auto; */
+}
+main{
+    margin: 0 auto;
+    width: 721px;
+}
+main >div{
+    display: inline-flex;
+    float: right;
+    width: 38%;
+    padding: 3rem 0 0 0;
+    }
+header {
+    padding: 1rem;}
+section {
+    padding: 1rem;
+}
+#hint{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    display: none;
+    width: 100%;
+    font-size: 13px;
+    background: linear-gradient(180deg, rgba(254, 255, 199, 0) 0%, rgba(0, 0, 0, 1) 8%);
+}
+#hint:before{content: 'Dica';width: 100%;float: left;font-size: 20px;font-weight: bold;font-family: 'Roboto Slab';letter-spacing: 1px;}
+#blink {
+    animation: blink 0.7s step-end infinite;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.5rem;
+    color: #f5f5b5;
+}
+
+#controls input:checked:before {
+    content: "<";
+    animation: blink 3s step-end infinite;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    opacity: 1;
+    top: 14%;
+    position: absolute;
+}
+
+@keyframes blink {
+    67% {
+        opacity: 0
+    }
+}
+
+#title {
+    background-color: #000;
+    border-bottom: 1px solid lightgray;
+}
+
+#score {
+    width: 54%;
+    float: left;
+}
+
+#score section+section {
+    position: relative
+}
+
+#controls {
+    width: 100%;
+    float: right;
+    display: inline-flex;
+    flex-flow: column;
+}
+#preGame{
+    display: inline-flex;
+    flex-flow: column;
+}
+#controls>label {
+    font-family: 'Lobster', cursive;
+    font-size: 2vw;
+    letter-spacing: 2px;
+}
+
+#preGame form {
+    padding: 10px 0 0 0;
+    display: inline-flex;
+    flex-flow: row-reverse wrap;
+    width: 49%;
+}
+
+#preGame form * {
+    line-height: unset;
+    cursor: pointer;
+}
+
+#preGame form span {
+    display: inline-flex;
+    width: 100%;
+    flex-flow: row nowrap;
+    align-items: start;
+    justify-content: space-between;
+    align-content: space-between;
+    justify-items: flex-start;
+}
+
+#preGame form input {
+    width: 2rem;
+    border: 0px;
+    position: relative;
+    appearance: none;
+    height: 100%;
+    min-height: 3vw;
+}
+
+#preGame form label {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1rem;
+    width: fit-content;
+    border-bottom: 1px dotted;
+    height: 1.5rem;
+    max-width: 80%;
+}
+
+#testLetter, button {
+    margin: 3vw auto;
+    background-color: #000;
+    border: none;
+    border-radius: 1vw;
+    color: #fefef9;
+    padding: 1vw;
+    cursor: pointer;
+}
+
+#inGame {
+    display: none;
+    flex-flow: column;
+    text-align: center;
+    align-items: center;
+}
+
+#gameInput {
+    border: none;
+    border-bottom: 1px solid lightgray;
+    width: 6vw;
+    text-align: center;
+    font-size: 5vw
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    color: #fefef9;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    letter-spacing: 2px;
+    font-size: 5vw;
+    padding: 0;
+    MARGIN: 0;
+}
+
+#hint form, gramgrp {
+    display: none;
+}
+
+#hint entry {
+    display: inline-flex;
+    flex-flow: column nowrap;
+}
+
+#board {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    height: max-content;
+    width: 100%;
+}
+
+#board span {
+    width: 30px;
+    border-bottom: 2px solid black;
+    margin-right: 10px;
+    padding-bottom: 0.5rem;
+    height: 40px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#board span.hint {
+    color: crimson
+}
+
+#morto{
+    top: 2.1rem;
+    left: 61px;
+    position: absolute;
+    -webkit-transform-origin: 50% 0;
+  /* for Safari and older Chrome */
+    transform-origin: 50% 0;
+    -webkit-animation: swinging 6s ease-in-out forwards infinite;
+    animation: swinging 6s ease-in-out forwards infinite;
+    transform-origin: 50% 0%;
+    -webkit-transform-origin: 50% 0%;
+    display: inline-flex;
+    height: 10rem;
+    flex-flow: column nowrap;
+}
+#morto *{text-align: center;color: #898484;line-height: 0.9rem;font-weight: bold;}
+@keyframes swinging {
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+#gameOver img{max-width: 20vw;}
+#gameOver{
+  
+width: 100vw;
+  
+height: 100vh;
+  
+position: fixed;
+  
+background-color: #fff;
+  
+z-index: 99;
+  
+display: none;
+  
+flex-flow: column nowrap;
+  
+top: 0;
+  
+left: 0;
+  
+text-align: center;
+  
+align-content: center;
+  
+justify-content: center;
+  
+align-items: center;
+}
+
+#gameOver h3{
+    font-size: 5vw;
+}
+section#usedList {
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    color: #4b4848;
+}
+
+section#usedList:before {content: 'Letras ja utilizadas: ';letter-spacing: initial;}
+
+#win, #loose{display:none;flex-flow: column nowrap;align-content: center;text-align: center;justify-content: center;align-items: center;}
+sense{display:inline-flex;flex-flow: row;}
+sense *, sense + *{line-height: 1.5rem;font-family: 'Roboto Slab';margin-right: 1rem;}
+}
